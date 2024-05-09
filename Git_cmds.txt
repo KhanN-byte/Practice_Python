@@ -1,0 +1,13 @@
+   80  git push -u origin main
+   81  git push -f origin main
+   106  git status
+       git checkout -b "latest_branch"
+  107  git add .
+  108  git commit -m 'new changes 0.0.2'
+  109  git push origin new_branch
+  110  history
+  111  history | 'git' grep > Git_cmds.txt
+  112  history | 'git' grep
+  113  grep 'git
+ƒ
+  114  grep 'git' | history > git_cmds.txt

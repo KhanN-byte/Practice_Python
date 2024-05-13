@@ -9,5 +9,11 @@
   111  history | 'git' grep > Git_cmds.txt
   112  history | 'git' grep
   113  grep 'git
-ƒ
+ï¿½
   114  grep 'git' | history > git_cmds.txt
+
+### if ubuntu wsl passwd is forgotten, steps:
+
+  ubuntu config --default-user root (run in terminal)
+  ls /home 
+  passwd user_name

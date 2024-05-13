@@ -13,14 +13,12 @@ df.set_index(df.columns[0], inplace=True)
 virat_stats = df['Virat Kohli']
 babar_stats = df['Babar Azam']
 
-print(babar_stats)
+
 # Create a new DataFrame to store the comparison
 comparison_df = pd.DataFrame({'Virat Kohli': virat_stats, 'Babar Azam': babar_stats})
-print(comparison_df)
-# Identify rows where Babar Azam's statistics are better than Virat Kohli's
-better_rows = babar_stats > virat_stats
 
-print(better_rows)
+babar_better_rows = babar_stats > virat_stats
+virat_better_rows = virat_stats > babar_stats
 
 # Plot the trend
 plt.figure(figsize=(15, 9))
@@ -32,8 +30,12 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Highlight rows where Babar Azam is better than Virat Kohli
-for i, better_row in enumerate(better_rows):
-    if better_row:
-        plt.axvline(x=i, color='red', linestyle='--')
+for i, babar_better_row in enumerate(babar_better_rows):
+    if babar_better_row:
+        plt.axvline(x=i, color='green', linestyle='--')
+
+for i, virat_better_row in enumerate(virat_better_rows):
+    if virat_better_row:
+        plt.axvline(x=i, color='blue', linestyle='--')
 
 plt.show()
